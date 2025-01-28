@@ -14,17 +14,14 @@ describe('Expert Recency API Tests', () => {
   let sandbox;
 
   before(() => {
-    // Create a Sinon sandbox
     sandbox = sinon.createSandbox();
   });
 
   after(() => {
-    // Restore all stubs and mocks
     sandbox.restore();
   });
 
   it('Should validate filtering prior to a year', async () => {
-    // Mock the HTTP request using Sinon
     const postStub = sandbox.stub(request(baseUrl), 'post').resolves({
       status: 200,
       body: {
@@ -43,12 +40,10 @@ describe('Expert Recency API Tests', () => {
       },
     });
 
-    // check if the mock works
     console.log("Response Body:", res.body);
 
-    // Validations
     expect(res.status).to.equal(200);
-    const advisors = res.body.data.map(expert => expert.advisorName);
+    const advisors = res.body.data?.map(expert => expert.advisorName);
     expect(advisors).to.include("John Doe");
     res.body.data.forEach(expert => {
       expect(expert.recency).to.be.greaterThan(12);
@@ -58,7 +53,6 @@ describe('Expert Recency API Tests', () => {
   });
 
   it('Should validate filtering from one year to two', async () => {
-    // Mock a different response for this test
     const postStub = sandbox.stub(request(baseUrl), 'post').resolves({
       status: 200,
       body: {

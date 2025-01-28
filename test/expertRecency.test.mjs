@@ -43,6 +43,9 @@ describe('Expert Recency API Tests', () => {
       },
     });
 
+    // check if the mock works
+    console.log("Response Body:", res.body);
+
     // Validations
     expect(res.status).to.equal(200);
     const advisors = res.body.data.map(expert => expert.advisorName);
@@ -51,7 +54,6 @@ describe('Expert Recency API Tests', () => {
       expect(expert.recency).to.be.greaterThan(12);
     });
 
-    // Restore the stub after the test
     postStub.restore();
   });
 
@@ -79,8 +81,6 @@ describe('Expert Recency API Tests', () => {
     res.body.data.forEach(expert => {
       expect(expert.recency).to.be.within(12, 24);
     });
-
-    // Restore the stub after the test
     postStub.restore();
   });
 

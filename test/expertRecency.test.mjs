@@ -1,13 +1,12 @@
 import sinon from "sinon";
 import chaiHttp from "chai-http";
 import * as chai from "chai";
-const should = chai.should();
 const expect = chai.expect;
 const use = chai.use;
 
 const request = use(chaiHttp).request.execute;
 
-const baseUrl = 'https://your-api-url.com';
+const baseUrl = 'https://https://www.alphasights.com/projects';
 const endpoint = '/experts';
 
 describe('Expert Recency API Tests', () => {

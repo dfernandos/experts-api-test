@@ -9,6 +9,7 @@ Ensure you have the following dependencies installed before running the tests:
 - Node.js (Latest LTS version recommended)
 - npm or yarn
 - Mocha, Chai, Sinon for testing
+- Experts api 
 
 ### Install dependencies
 ```sh
@@ -56,9 +57,6 @@ The API expects a POST request to filter experts based on recency. The request s
 
 ## Test Implementation
 The tests are written using **Mocha, Chai, and Sinon** and mock API responses to validate correct filtering behavior.
-
-### Known Issue
-Currently, the tests are not running successfully because the mock implementation is not working correctly. I was unable to identify the root cause due to time constraints. As a result, the submitted code only contains the test structure, since the test logic itself is correct, but the mock is failing.
 
 ### Technologies Used
 - **Mocha**: Test runner
